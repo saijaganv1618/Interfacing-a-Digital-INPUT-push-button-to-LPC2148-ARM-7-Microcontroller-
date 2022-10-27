@@ -1,14 +1,17 @@
 # Interfacing-a-Digital-INPUT-push-button-to-LPC2148-ARM-7-Microcontroller-
-Name :
-Roll no 
-Date of experiment :
+~~~
+Name : H.Syed Abdul Wasih
+Register No : 212221240057
+Date of experiment : 06/10/2022
 
 Ex. No. : 3
-Date: 
- 
-### Aim: To Interface a Digital input (pushbutton ) to LPC2148 ARM 7 and write a code to switch on and of an LED 
-Components required: Proteus ISIS professional suite, Kiel μ vision 5 Development environment 
-### Theory 
+Date : 06/10/2022
+~~~
+### Aim:
+To Interface a Digital input (pushbutton ) to LPC2148 ARM 7 and write a code to switch on and of an LED 
+### Components required:
+Proteus ISIS professional suite, Kiel μ vision 5 Development environment 
+### Theory:
 The full form of an ARM is an advanced reduced instruction set computer (RISC) machine, and it is a 32-bit processor architecture expanded by ARM holdings. The applications of an ARM processor include several microcontrollers as well as processors. The architecture of an ARM processor was licensed by many corporations for designing ARM processor-based SoC products and CPUs. This allows the corporations to manufacture their products using ARM architecture. Likewise, all main semiconductor companies will make ARM-based SOCs such as Samsung, Atmel, TI etc.
 
 
@@ -115,15 +118,38 @@ Figure -11 Hex file for simulation
 Step 9: Select the hex file from the Kiel program folder and import the program in to the microcontroller as shown in figure 11 ,  debug and if no errors in connections are found, run the VSM simulation to view the output.
 
 
-### Kiel - Program  
-
+### Kiel - Program :
+~~~
+#include<LPC214X.h>      //Define LPC2148 Header File
+#define led (1<<2)       //led macro for pin 2 of port0
+#define sw (1<<10)       // sw macro for pin 10 of port0
+int main(void)
+{
+   unsigned int x;
+   IO0DIR|= (~sw);       //Configuration P1.24 - P1.31 as input
+   IO0DIR|= led;         //Configuration P1.16 - P1.23 as Output
+   while(1)
+	  {
+	       x=IOPIN0 & sw;  //save status of sw in variable x
+		   if(x==sw)       //if switch open
+		     {
+			    IOCLR0|=led;   //LED OFF
+			 }
+			 else              //if switch close
+			 {
+			    IOSET0|=led;   //LED ON
+			 }
+		 }
+}
+~~~
+### Output screen shots :
+### LED OFF:
+![output](https://user-images.githubusercontent.com/91781810/194283942-f6e0ba24-9cfb-4a63-9f7f-a7e9641bed71.png)
+### LED ON:
+![output](https://user-images.githubusercontent.com/91781810/194284018-f06f3ab2-3110-447e-aba9-930542338684.png)
+### Circuit Diagram:
+![output](https://user-images.githubusercontent.com/91781810/194284081-d74f16fc-0aea-450e-8a80-62c9621e8f9c.png)
 
 ### Result :
-Interfacing a digital output with ARM microcontroller is executed 
-
-### Output screen shots :
-
-
-
-
+Interfacing a digital output with ARM microcontroller is executed.
 
