@@ -1,7 +1,7 @@
 # Interfacing-a-Digital-INPUT-push-button-to-LPC2148-ARM-7-Microcontroller-
 ~~~
-Name : H.Syed Abdul Wasih
-Register No : 212221240057
+Name : Jagan A
+Register No : 212221230037
 Date of experiment : 06/10/2022
 
 Ex. No. : 3
@@ -144,11 +144,11 @@ int main(void)
 ~~~
 ### Output screen shots :
 ### LED OFF:
-![output](https://user-images.githubusercontent.com/91781810/194283942-f6e0ba24-9cfb-4a63-9f7f-a7e9641bed71.png)
+![output](LEDOFF.png)
 ### LED ON:
-![output](https://user-images.githubusercontent.com/91781810/194284018-f06f3ab2-3110-447e-aba9-930542338684.png)
+![output](LEDON.png)
 ### Circuit Diagram:
-![output](https://user-images.githubusercontent.com/91781810/194284081-d74f16fc-0aea-450e-8a80-62c9621e8f9c.png)
+![output](CIRCUIT.png)
 
 ### Result :
 Interfacing a digital output with ARM microcontroller is executed.
